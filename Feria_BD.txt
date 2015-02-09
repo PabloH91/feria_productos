@@ -1,0 +1,142 @@
+
+
+CREATE TABLE Clases
+(
+claseID int identity(1,1) PRIMARY KEY,
+descripcion VARCHAR (40)
+)
+
+INSERT INTO Clases VALUES ('Aceites')
+INSERT INTO Clases VALUES ('Manteca')
+INSERT INTO Clases VALUES ('Margarina')
+INSERT INTO Clases VALUES ('Azucares')
+
+CREATE TABLE Categorias
+(
+categoriaID int identity PRIMARY KEY,
+claseID int,
+descripcion VARCHAR (50)
+)
+
+INSERT INTO Categorias (claseID, descripcion) VALUES ('1', 'Ajonjoli')
+INSERT INTO Categorias VALUES ('1', 'Cánola')
+INSERT INTO Categorias VALUES ('1', 'Cartamo')
+INSERT INTO Categorias VALUES ('2', 'Clásica')
+INSERT INTO Categorias VALUES ('3' ,'Barra')
+INSERT INTO Categorias VALUES ('3' ,'Con ajo/especias')
+INSERT INTO Categorias VALUES ('3' ,'Mantequilla de mani')
+INSERT INTO Categorias VALUES ('3' ,'Light')
+INSERT INTO Categorias VALUES ('4' ,'Cruda')
+INSERT INTO Categorias VALUES ('4' ,'En Sobres')
+INSERT INTO Categorias VALUES ('4' ,'Especial')
+INSERT INTO Categorias VALUES ('4' ,'Granulado')
+INSERT INTO Categorias VALUES ('4' ,'Morena')
+
+CREATE TABLE Subcategorias
+(
+subcategoriaID int identity PRIMARY KEY,
+categoriaID int,
+descripcion VARCHAR (20)
+)
+
+CREATE TABLE Servicios
+(
+servicioID int identity PRIMARY KEY,
+tipoServicioID int,
+usuario VARCHAR(200),
+nombre VARCHAR (150),
+descripcionServicio varchar(255),
+imagen VARCHAR(200),
+estatus BIT,
+fechaInclucion DATETIME
+)
+CREATE TABLE tipoServicio
+(
+tipoServicioID int identity PRIMARY KEY,
+descripcion VARCHAR (40)
+)
+INSERT INTO tipoServicio VALUES ( 'Control de plagas')
+INSERT INTO tipoServicio VALUES ( 'Refrigeracion y aire acondicionado')
+INSERT INTO tipoServicio VALUES ( 'Fontaneria')
+INSERT INTO tipoServicio VALUES ( 'Albañilería')
+
+CREATE TABLE Equipo
+(
+equipoID int identity PRIMARY KEY,
+tipoEquipoID int,
+usuario VARCHAR(200),
+nombre VARCHAR (150),
+descripcionEquipo varchar(255),
+imagen VARCHAR(200),
+estatus BIT,
+fechaInclucion DATETIME
+)
+CREATE TABLE tipoEquipo
+(
+tipoEquipoID int identity PRIMARY KEY,
+descripcion VARCHAR (40)
+)
+INSERT INTO tipoEquipo VALUES ( 'Linea Blanca')
+INSERT INTO tipoEquipo VALUES ( 'Mantelería')
+INSERT INTO tipoEquipo VALUES ( 'Cubertería')
+INSERT INTO tipoEquipo VALUES ( 'Mobiliario')
+
+CREATE TABLE Limpieza
+(
+limpiezaID int IDENTITY PRIMARY KEY,
+usuario VARCHAR(200),
+clasificacionID int,
+marca VARCHAR(35),
+descripcionMarca varchar(255),
+imagen VARCHAR(200),
+estatus BIT,
+fechaInclucion DATETIME
+)
+CREATE TABLE clasLimpieza
+(
+clasificacionID int identity PRIMARY KEY,
+descripcion VARCHAR (100)
+)
+CREATE TABLE SubclasLimpieza
+(
+SubclasID int identity PRIMARY KEY,
+clasificacionID int,
+descripcion VARCHAR (100)
+)
+
+INSERT INTO clasLimpieza VALUES ('Desechables')
+INSERT INTO clasLimpieza VALUES ('Baños')
+INSERT INTO clasLimpieza VALUES ('Cocina e interiores')
+INSERT INTO clasLimpieza VALUES ('Limpiadores')
+
+INSERT INTO SubclasLimpieza VALUES ('1', 'Servilletas')
+INSERT INTO SubclasLimpieza VALUES ('1', 'Rollo de toallas')
+INSERT INTO SubclasLimpieza VALUES ('1', 'Papel higiénico')
+INSERT INTO SubclasLimpieza VALUES ('1', 'Bolsas de basura')
+INSERT INTO SubclasLimpieza VALUES ('2', 'Alcohol en gel')
+INSERT INTO SubclasLimpieza VALUES ('2', 'Basureros')
+INSERT INTO SubclasLimpieza VALUES ('2', 'Cloros')
+INSERT INTO SubclasLimpieza VALUES ('2', 'Desinfectantes')
+INSERT INTO SubclasLimpieza VALUES ('2', 'Desodorante ambiental')
+INSERT INTO SubclasLimpieza VALUES ('2', 'Destaqueadores')
+INSERT INTO SubclasLimpieza VALUES ('2', 'Isopos para inodoro')
+INSERT INTO SubclasLimpieza VALUES ('2', 'Jabón liquido manos')
+INSERT INTO SubclasLimpieza VALUES ('2', 'Pastillas desodorizantes')
+INSERT INTO SubclasLimpieza VALUES ('2', 'Velas aromaticas')
+INSERT INTO SubclasLimpieza VALUES ('3', 'Aerosoles para superficies')
+INSERT INTO SubclasLimpieza VALUES ('3', 'Basurero gigante')
+INSERT INTO SubclasLimpieza VALUES ('3', 'Cepillos')
+INSERT INTO SubclasLimpieza VALUES ('3', 'Deshumedecedores')
+INSERT INTO SubclasLimpieza VALUES ('3', 'Escobas')
+INSERT INTO SubclasLimpieza VALUES ('3', 'Jabón crema platos')
+INSERT INTO SubclasLimpieza VALUES ('3', 'Jabón liquido para platos')
+INSERT INTO SubclasLimpieza VALUES ('3', 'Paños de limpieza')
+INSERT INTO SubclasLimpieza VALUES ('3', 'Palita para basura')
+INSERT INTO SubclasLimpieza VALUES ('3', 'Plumeros')
+INSERT INTO SubclasLimpieza VALUES ('3', 'Pulidores de metal')
+INSERT INTO SubclasLimpieza VALUES ('3', 'Toallas desinfectantes')
+INSERT INTO SubclasLimpieza VALUES ('3', 'Trapeadores')
+INSERT INTO SubclasLimpieza VALUES ('4', 'Hornos')
+INSERT INTO SubclasLimpieza VALUES ('4', 'Pisos')
+INSERT INTO SubclasLimpieza VALUES ('4', 'Superficies')
+INSERT INTO SubclasLimpieza VALUES ('4', 'Vidrios')
