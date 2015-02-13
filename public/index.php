@@ -2,7 +2,15 @@
 <?php require_once("../app/functions.php"); ?>
 
 <?php include(TEMPLATES_PATH . "/header.php"); ?>
-<div class="container">
+
+		<ul class="nav nav-tabs pull-right">
+		    <li role="presentation" class="active"><a href="index.php">Home</a></li>
+		    <li role="presentation"><a href="about.php">About</a></li>
+		    <li role="presentation"><a href="contact.php">Contact</a></li>
+		</ul>
+		</nav>
+		<h2 class="text-muted">Feria del Productor</h2>
+	</div>
 	<div class="jumbotron">
 		<h2>This is pretty amazing!</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut eos amet voluptate atque. Voluptatem veritatis deserunt ut culpa accusantium laudantium, exercitationem, molestias. Nesciunt aut soluta, ipsum, totam nobis suscipit assumenda!</p>
@@ -29,5 +37,5 @@
 			<p><a href="#" class="btn btn-info">Read more..</a></p>
 		</div>
 	</div>
-</div>
+
 <?php include(TEMPLATES_PATH . "/footer.php"); ?>

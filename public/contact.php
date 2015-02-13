@@ -2,6 +2,15 @@
 <?php require_once("../app/functions.php"); ?>
 
 <?php include(TEMPLATES_PATH . "/header.php"); ?>
+
+        <ul class="nav nav-tabs pull-right">
+            <li role="presentation"><a href="index.php">Home</a></li>
+            <li role="presentation"><a href="about.php">About</a></li>
+            <li role="presentation" class="active"><a href="contact.php">Contact</a></li>
+        </ul>
+    </nav>
+    <h2 class="text-muted">Feria del Productor</h2>
+</div>
 <div class="container">
 	<div class="row">
 		<article class="col-sm-8 col-sm-offset-1 col-sm-push-3">
