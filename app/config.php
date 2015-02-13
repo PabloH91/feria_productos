@@ -23,6 +23,10 @@ if(mysqli_connect_errno()) {
 */
 defined("TEMPLATES_PATH")
     or define("TEMPLATES_PATH", realpath(dirname(__FILE__) . '/templates'));
+defined("PUBLIC_PATH")
+    or define("PUBLIC_PATH", realpath(dirname(__FILE__) . '/../public'));
+defined("VENDOR_PATH")
+    or define("VENDOR_PATH", realpath(dirname(__FILE__) . '/../public/vendor'));
  
 /*
     Error reporting.
