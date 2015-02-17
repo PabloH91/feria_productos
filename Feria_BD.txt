@@ -140,3 +140,26 @@ INSERT INTO SubclasLimpieza VALUES ('4', 'Hornos')
 INSERT INTO SubclasLimpieza VALUES ('4', 'Pisos')
 INSERT INTO SubclasLimpieza VALUES ('4', 'Superficies')
 INSERT INTO SubclasLimpieza VALUES ('4', 'Vidrios')
+
+
+-----------------------------------------------------
+RECETAS
+recetaID
+nombreReceta
+descripcion
+tipoID
+tiempoPreparacion
+comensales
+dificultad
+ingredientes
+preparacion
+observaciones
+
+TAGSREC
+tagID
+recetaID
+tag
+
+DIFICULTAD
+dificultadID
+descripcionDif
