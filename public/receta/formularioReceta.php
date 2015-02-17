@@ -13,12 +13,12 @@ tinymce.init({
 <body>
 <table border="1">
   <tr>
-    <td align="center">Form Input Employees Data</td>
+    <td align="center">Agregar una Receta</td>
   </tr>
   <tr>
     <td>
       <table>
-        <form method="post" action="insertarReceta.php">
+        <form action="insertarReceta.php" method="post" enctype="multipart/form-data">
         
         <tr>
           <td><label for="nombreReceta">Título:</label></td>
@@ -84,12 +84,17 @@ tinymce.init({
           </td>
         </tr>
         <tr>
-          <td></td>
-          <td align="right"><input type="submit"
-          name="submit" value="Sent"></td>
+          <td><label>Seleccionar Imagen:</label></td>
+          <td><input type="file" name="fileToUpload" id="fileToUpload"></td>
         </tr>
-        </table>
-      </td>
+        <tr>
+          <td></td>
+          <td><input type="submit"
+          name="submit" value="Agregar"></td>
+        </tr>
+        </form>
+      </table>
+    </td>
     </tr>
 </table>
 

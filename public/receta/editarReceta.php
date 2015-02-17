@@ -15,6 +15,7 @@ tinymce.init({
 <?php 
 try{
 	  require_once'MiConeccion.php';
+	  error_reporting(0);
 }catch(Exception $e){
 	  $error = $e->getMessage();	
 }
@@ -26,10 +27,11 @@ try{
 		echo '<table width="54%" border="1" cellpadding="5">
 		<th colspan="5">Editar Receta</th><tr>';
 		//echo '<table width="100%" border="1" cellspacing="0" cellpadding="6">';
+		$i = 0;
 		while($mostrar = mysqli_fetch_assoc($result)){
-			$i = 0;
+			
 			if ($i % 5 == 0) { 
-            	echo '<td><a href="?id=' . $mostrar['recetaID'] . '">' . $mostrar['nombreReceta'] . '</a>  [ <a href="?id=' . $mostrar['recetaID'] . '&accion=eliminar"> x </a> ]</td>';			
+            	echo '<tr><td><a href="?id=' . $mostrar['recetaID'] . '">' . $mostrar['nombreReceta'] . '</a>  [ <a href="?id=' . $mostrar['recetaID'] . '&accion=eliminar"> x </a> ]</td>';			
             } else {
             	echo '<td><a href="?id=' . $mostrar['recetaID'] . '">' . $mostrar['nombreReceta'] . '</a>  [ <a href="?id=' . $mostrar['recetaID'] . '&accion=eliminar"> x </a> ]</td>';
     		}
