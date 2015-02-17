@@ -29,9 +29,9 @@ try{
 		while($mostrar = mysqli_fetch_assoc($result)){
 			$i = 0;
 			if ($i % 5 == 0) { 
-            	echo '<td><a href="?id=' . $mostrar['recetaID'] . '">' . $mostrar['nombreReceta'] . '</a></td>';			
+            	echo '<td><a href="?id=' . $mostrar['recetaID'] . '">' . $mostrar['nombreReceta'] . '</a>  [ <a href="?id=' . $mostrar['recetaID'] . '&accion=eliminar"> x </a> ]</td>';			
             } else {
-            	echo '<td><a href="?id=' . $mostrar['recetaID'] . '">' . $mostrar['nombreReceta'] . '</a></td>';
+            	echo '<td><a href="?id=' . $mostrar['recetaID'] . '">' . $mostrar['nombreReceta'] . '</a>  [ <a href="?id=' . $mostrar['recetaID'] . '&accion=eliminar"> x </a> ]</td>';
     		}
 			$i++;
 		}	echo '</tr></table>';
@@ -50,9 +50,20 @@ try{
 	}else{
 		echo "<p>$error</p>";
 	}
+	
+	if($_GET['id'] && $_GET['accion'] == 'eliminar'){
+		$sql = "DELETE FROM recetas WHERE recetaID = $_GET[id] LIMIT 1";
+		$result = mysqli_query($db,$sql);
+		
+		if($result){
+			echo 'Se elimino la receta';
+		}else{
+			echo mysqli_error($db);
+		}
+	}
 ?>	
 
-<?php	if($_GET['id']){ 
+<?php	if($_GET['id'] && $_GET['accion'] != 'eliminar'){ 
 
 	$sql = "SELECT * FROM recetas WHERE recetaID = $_GET[id] LIMIT 1";
 	$result = mysqli_query($db,$sql);
