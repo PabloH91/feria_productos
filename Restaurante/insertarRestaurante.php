@@ -32,8 +32,8 @@ function addData($nombre, $tel, $email, $www, $direccion, $mapa, $facebook, $twi
     if (isset($error)) {
 		echo "<p>$error</p>";
 	} else {
-		//echo  "El valor insertado es: </br> " . $nombre . ' </br>  ' . $tel . ' </br>  ' . $email . ' </br>  ' . $www . ' </br>  ' .  $direccion . ' </br>  ' .  $mapa . ' </br>  ' . $facebook . ' </br>  ' . $twitter . ' </br>  ' . $gplus . $fecha;
-		$sql = "INSERT INTO restaurante VALUES('', '$nombre', '$tel', '$email', '$www', '$direccion', '$mapa', '$facebook' , '$twitter' ,'$gplus' ,'$fecha')";
+		echo  "El valor insertado es: </br> " . $nombre . ' </br>  ' . $tel . ' </br>  ' . $email . ' </br>  ' . $www . ' </br>  ' .  $direccion . ' </br>  ' .  $mapa . ' </br>  ' . $facebook . ' </br>  ' . $twitter . ' </br>  ' . $gplus . $fecha;
+		//$sql = "INSERT INTO restaurante VALUES('', '$nombre', '$tel', '$email', '$www', '$direccion', '$mapa', '$facebook' , '$twitter' ,'$gplus' ,'$fecha')";
 		mysqli_query($db,$sql);
 		echo "Se inserto correctamente la informacion en la base de datos. </br>";
 				
