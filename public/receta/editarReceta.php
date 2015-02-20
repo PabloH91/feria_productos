@@ -38,7 +38,7 @@ try{
 			$i++;
 		}	echo '</tr></table>';
 		  
-}
+	}
 
 	if($_POST['submit']){
 		$sql = "UPDATE recetas SET nombreReceta = '$_POST[nombreReceta]', descripcion = '$_POST[descripcion]', tipo = '$_POST[tipo]', tiempoPreparacion = '$_POST[tiempoPreparacion]', comensales = '$_POST[comensales]', dificultadID = '$_POST[dificultadID]', ingredientes = '$_POST[ingredientes]', preparacion = '$_POST[preparacion]', observaciones = '$_POST[observaciones]' WHERE recetaID = $_POST[recetaID]";
